@@ -4,21 +4,21 @@ This repository provides the data set, named IPC, for the evaluation of machine 
 
 ## <a id="background"></a>Background
 
-Automated planning is one of the foundational areas of AI. Even the simplest formalism is known to be PSPACE-hard, and therefore no single planner can be expected to work well for all problems and domains. Thus, portfolio-based techniques has become increasingly popular. In particular, deep learning emerges as a promising methodology for online planner selection. A prominent example is the winner, *Delfi* [(Katz et al. 2018)](#Katz2018), of the Optimal Track of the [International Planning Competition (IPC) 2018](https://ipc2018.bitbucket.io).
+Automated planning is one of the foundational areas of AI. Even the simplest formalism is known to be PSPACE-hard, and therefore no single planner can be expected to work well for all tasks and domains. Thus, portfolio-based techniques has become increasingly popular. In particular, deep learning emerges as a promising methodology for online planner selection. A prominent example is the winner of the Optimal Track of the [International Planning Competition (IPC) 2018](https://ipc2018.bitbucket.io): the planner *Delfi* [(Katz et al. 2018)](#Katz2018). 
 
-The planner reasons about problems represented as images, constructed from structural graph representations of the planning problems [(Katz et al. 2018)](#Katz2018). Two examples are the *problem description graph* [(Pochter et al. 2011)](#Pochter2011) for a **grounded** representation, and the *abstract structure graph* [(Sievers et al. 2017)](#Sievers2017) for a **lifted** representation.
+*Delfi* is a portfolio planner, choosing a planner out of the portfolio for a planning task, by reasoning about tasks represented as images, constructed from structural graph representations of the planning tasks [(Katz et al. 2018)](#Katz2018). Two examples are the *problem description graph* [(Pochter et al. 2011)](#Pochter2011) for a **grounded** representation, and the *abstract structure graph* [(Sievers et al. 2017)](#Sievers2017) for a **lifted** representation.
 
 The file runtimes.csv describes the collection of planning tasks with time needed for solving each task, for a collection of 29 planners. These planners include the 17 planners in the portfolio of *Delfi*, as well as the planners that participated in IPC 2018. The details of some of the planners may be found in [Katz et al. (2018)](#Katz2018).
 
-The timeout limit for each problem is 1800s. For planners that fail to solve the problem before timeout, the target value is artificially set as 10000.
+The timeout limit for each task is 1800s. For planners that fail to solve the task before timeout, the target value is artificially set as 10000.
 
-The problems not solved by any of the planners in the portfolio within the timeout limit 1800s are ignored in the construction of the data set. In particular, some of these problems occur in IPC 2018. Hence, the test set contains problems strictly fewer than those in IPC 2018.
+The tasks not solved by any of the planners in the portfolio within the timeout limit 1800s are ignored in the construction of the data set. In particular, some of these tasks occur in IPC 2018. Hence, the test set contains tasks strictly fewer than those in IPC 2018.
 
 ## File Format
 
 There are two folders with images: `grounded` and `lifted`. Each of these folders contains a collection of images, named by the corresponding planning task. 
 
-Additionally, the folder `problems` contains files with problem names, with one suggested separation to training/validation/test sets.
+Additionally, the folder `problems` contains files with task names, with one suggested separation to training/validation/test sets.
 
 ## Citing This Data Set
 
